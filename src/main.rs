@@ -15,7 +15,7 @@ pub fn print_str(string: &str) {
 }
 
 #[no_mangle]
-extern "C" fn _start() {
+fn main() {
     print_str("Hello, World!\n");
 }
 
