@@ -8,7 +8,7 @@ pub fn print_str(string: &str) {
         asm!(
             "pusha",
             "xor eax, eax",
-            "mov ebx, ${strp}",
+            "mov ebx, {strp}",
             "int 80h",
             "popa",
             strp = in(reg) string.as_ptr()
