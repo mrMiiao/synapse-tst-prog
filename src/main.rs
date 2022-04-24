@@ -6,11 +6,9 @@ use core::arch::asm;
 pub fn print_str(string: &str) {
     unsafe{
         asm!(
-            "pusha",
             "xor eax, eax",
             "mov ebx, {strp}",
             "int 80h",
-            "popa",
             strp = in(reg) string.as_ptr()
         );
     }
