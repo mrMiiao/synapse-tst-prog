@@ -1,5 +1,5 @@
 #![no_std]
-#![no_main]
+#![feature(start)]
 
 use core::arch::asm;
 
@@ -14,10 +14,12 @@ pub fn print_str(string: &str) {
     }
 }
 
-#[no_mangle]
-fn main() {
+#[start]
+pub fn main(_argc: isize, _argv: *const *const u8) -> isize {
     print_str("Hello, World!\n");
+    0
 }
+
 
 #[panic_handler]
 pub extern "C" fn panic(_code: &core::panic::PanicInfo) -> ! {
