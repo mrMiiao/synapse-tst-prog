@@ -16,7 +16,7 @@ pub fn print_str(string: &str) {
 
 #[no_mangle]
 pub extern fn main() {
-    print_str("Hello, World!");
+    print_str("Hello, World!\0");
 }
 
 
